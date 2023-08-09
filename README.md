@@ -57,7 +57,7 @@ The device comes by default with all the ports in host mode.
 
 [Activating OTG on the USB2.0 Port](./docs/activating_otg.md)
 
-WIP: This appears to make the port not usable for keyboards/etc. It has another one so no issue for now.
+When debug mode is on the port cannot be used for peripherals like a keyboard.
 
 ### Install a new Launcher
 
