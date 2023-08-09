@@ -1,0 +1,21 @@
+--- second/dts	2023-08-09 00:49:40.368862754 +0100
++++ second/dts_new	2023-08-09 00:50:18.548852155 +0100
+@@ -1703,17 +1703,17 @@
+ 
+ 		usb@fc000000 {
+ 			compatible = "snps,dwc3";
+ 			reg = <0x00 0xfc000000 0x00 0x400000>;
+ 			interrupts = <0x00 0xdc 0x04>;
+ 			power-domains = <0x4b 0x1f>;
+ 			resets = <0x02 0x2a4>;
+ 			reset-names = "usb3-otg";
+-			dr_mode = "host";
++			dr_mode = "otg";
+ 			phys = <0x50 0x51>;
+ 			phy-names = "usb2-phy\0usb3-phy";
+ 			phy_type = "utmi_wide";
+ 			snps,dis_enblslpm_quirk;
+ 			snps,dis-u1-entry-quirk;
+ 			snps,dis-u2-entry-quirk;
+ 			snps,dis-u2-freeclk-exists-quirk;
+ 			snps,dis-del-phy-power-chg-quirk;

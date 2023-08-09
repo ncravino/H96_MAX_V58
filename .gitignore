@@ -1,0 +1,8 @@
+workdir/*
+Linux_Upgrade_Tool_v2.4
+magisk
+rkbin
+rkdeveloptool
+rkflashtool
+*.apk
+firmware/
