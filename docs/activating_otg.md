@@ -8,10 +8,27 @@ Tested under Debian on X86_64 and based on the notes from @phhusson at https://g
 
 By default it appears the usb ports are in host mode in these boxes.
 
-## Check if already enabled
+## Check if adb is already possible
 
-Connect the cable to the port. Activate developer mode, and check the settings for USB and computer connection.
-If the computer recognizes the device as an android device you have the port in otg mode and don't need to do anything.
+- Connect the cable to the **black** USB port.
+- Activate the USB connection and debugging in the developer Options.
+    - To activate the developer options go to the About section and press the build_number 10 times.
+
+![USB Dev Settings](./imgs/activating_otg/usb_dev_settings.jpg)
+
+
+If the computer recognizes the device as an android device try to find if adb recognizes it:
+
+```adb devices```
+
+Should print the device (code may vary):
+
+```
+List of devices attached
+xxxxxxxxxxxxxx1wp75Q    device
+```
+
+If it prints nothing then you have to enable otg on the port.
 
 ## Pre-requisites (for Debian)
 
@@ -117,21 +134,55 @@ mkbootimg --kernel ./boot/zImage --ramdisk ./boot/initrd.img --second ./new_seco
 
 ### 11. flash the new boot image from 10. onto boot or recovery using fastboot
 
-```fastboot flash boot ./workdir/new_boot.img to flash to boot"```
+- Connect the cable to the **black** USB port.
+- put the device in fastboot, see [Booting](./booting.md)
+- then execute the command to flash
+
+to flash to boot: ```fastboot flash boot ./workdir/new_boot.img```
+
 or
-```fastboot flash recovery ./workdir/new_boot.img to flash to boot"```
+
+to flash to recovery: ```fastboot flash recovery ./workdir/new_boot.img```
 
 ### 12. reboot to system
 
+- It should boot normally
+- If it enters the boot menu try:
+  - disconnecting the usb and rebooting
+  - selecting "enter recovery"
+  - power off/power on
+  - flashing again
+
 #### 13. go to developer options and activate usb debugging and computer connection
+
+- Activate the USB connection and debugging in the developer Options.
+  - To activate the developer options go to the About section and press the build_number 10 times.
+
+![USB Dev Settings](./imgs/activating_otg/usb_dev_settings.jpg)
 
 #### 14. connect usb to black port and use adb devices to check for the device
 
 ```adb devices```
 
+Should print the device (code may vary):
+
+```
+List of devices attached
+xxxxxxxxxxxxxx1wp75Q    device
+```
+
 #### 15. use adb shell to check for the change
 
 ```adb shell 'cat /proc/device-tree/usbdrd3_0/usb@fc000000/dr_mode'```
+
+Should print:
+
+```otg```
+
+
+#### Notes
+
+If USB debugging is active keyboards and other peripherals will not work on that port, disable debugging to use it.
 
 ## Script
 

@@ -11,29 +11,29 @@ We can open the whole thing in less than 5 minutes and without destroying anythi
 
 Using a thin plastic card just go around the border where the white plastic meets the black bottom and lift carefully. It's probably easier to start near the feet indentations.
 
-![Bottom  white Cover](./1_bottom.jpg)
+![Bottom  white Cover](./imgs/box_disassembly/1_bottom.jpg)
 
 ### Removing the white bottom cover
 
 Just remove the screws and lift it.
 
-![Bottom Cover](./2_whitebottom.jpg)
+![Bottom Cover](./imgs/box_disassembly/2_whitebottom.jpg)
 
 #### Removing the black plate
 
 Just lift it with the plastic card, it's not fixed by anything other than the screws.
 
-![Bottom Plate](./3_platebottom.jpg)
+![Bottom Plate](./imgs/box_disassembly/3_platebottom.jpg)
 
 ### Removing the board from the case
 
 Pick it by the LCD and lift carefully, it should come off easily. The LCD is the white thing in the photo bellow.
 
-![Board bottom](./4_boardin.jpg)
+![Board bottom](./imgs/box_disassembly/4_boardin.jpg)
 
 ### The Board Features
 
-![Board top](./5_boardout.jpg)
+![Board top](./imgs/box_disassembly/5_boardout.jpg)
 
 - The 4 pin debug port is available
   - You can see it at the bottom left in the photo above

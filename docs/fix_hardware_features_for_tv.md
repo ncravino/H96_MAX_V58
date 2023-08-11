@@ -8,7 +8,7 @@ By default the device has hardware features wrong that will make some apps (like
 
 ## Features needed
 
-Android TV devices usually implement a set of features. These are checked by the apps to understand what layout should they use, and restrict devices that are not the type they want.
+Android TV devices usually implement a set of features and [disable others](https://developer.android.com/training/tv/start/hardware). These are checked by the apps to understand what layout should they use, and restrict devices that are not the type they want.
 The ones that I found that may be missing are the following:
 ```
 <feature name="android.hardware.screen.landscape" />
@@ -23,6 +23,8 @@ In the case of my H96 Max V58 box the only one missing was:
 <feature name="android.software.leanback_only" />
 ```
 It was commented out and this was making Plex enter a loop asking to change layout between mobile and tv.
+
+I also disabled per google documentation the features that usually aren't active on tv.
 
 ## Editing tv_core_hardware.xml
 
@@ -43,6 +45,8 @@ If it's not there just add it. Should look like this:
 <feature name="android.software.leanback_only" />
 
 ```
+
+You can check the example [tv_core_hardware.xml](../examples/tv_core_hardware.xml).
 
 ### Write the file back
 
